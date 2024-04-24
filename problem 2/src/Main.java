@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         int total = 0;
-        String s = "VIV";
+        String s = "MCMXCIV";
 
         ArrayList<Character> stringAsList= new ArrayList<Character>();
         for(int i = 0; i < s.length(); i++) {
@@ -20,28 +20,28 @@ public class Main {
 
             if(currentChar == 'I' && nextChar == 'V') {
                 total += 4;
-                stringAsList.remove(stringAsList.get(i));
                 stringAsList.remove(stringAsList.get(i+1));
+                stringAsList.remove(stringAsList.get(i-1));
             } else if(currentChar == 'I' && nextChar == 'X') {
                 total += 9;
-                stringAsList.remove(stringAsList.get(i));
                 stringAsList.remove(stringAsList.get(i+1));
+                stringAsList.remove(stringAsList.get(i-1));
             } else if(currentChar == 'X' && nextChar == 'L') {
                 total += 40;
-                stringAsList.remove(stringAsList.get(i));
                 stringAsList.remove(stringAsList.get(i+1));
+                stringAsList.remove(stringAsList.get(i-1));
             } else if(currentChar == 'X' && nextChar == 'C') {
                 total += 90;
-                stringAsList.remove(stringAsList.get(i));
                 stringAsList.remove(stringAsList.get(i+1));
+                stringAsList.remove(stringAsList.get(i-1));
             } else if(currentChar == 'C' && nextChar == 'D') {
                 total += 400;
-                stringAsList.remove(stringAsList.get(i));
                 stringAsList.remove(stringAsList.get(i+1));
+                stringAsList.remove(stringAsList.get(i-1));
             } else if(currentChar == 'C' && nextChar == 'M') {
                 total += 900;
-                stringAsList.remove(stringAsList.get(i));
                 stringAsList.remove(stringAsList.get(i+1));
+                stringAsList.remove(stringAsList.get(i-1));
             } else {
                 switch(currentChar) {
                     case 'I' : total += 1;
