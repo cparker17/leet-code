@@ -5,60 +5,68 @@ public class Main {
         int total = 0;
         String s = "MCMXCIV";
 
-        ArrayList<Character> stringAsList= new ArrayList<Character>();
-        for(int i = 0; i < s.length(); i++) {
+        ArrayList<Character> stringAsList = new ArrayList<Character>();
+        for (int i = 0; i < s.length(); i++) {
             stringAsList.add(s.charAt(i));
         }
 
         char currentChar;
         char nextChar = 'T';
-        for(int i = 0; i < stringAsList.size(); i++) {
+        for (int i = 0; i < stringAsList.size(); i++) {
             currentChar = stringAsList.get(i);
-            if(i < stringAsList.size() - 1) {
-                nextChar = stringAsList.get(i+1);
+            if (i < stringAsList.size() - 1) {
+                nextChar = stringAsList.get(i + 1);
             }
 
-            if(currentChar == 'I' && nextChar == 'V') {
+            if (currentChar == 'I' && nextChar == 'V') {
                 total += 4;
-                stringAsList.remove(stringAsList.get(i+1));
-                stringAsList.remove(stringAsList.get(i-1));
-            } else if(currentChar == 'I' && nextChar == 'X') {
+                stringAsList.remove(stringAsList.get(i + 1));
+                stringAsList.remove(stringAsList.get(i - 1));
+            } else if (currentChar == 'I' && nextChar == 'X') {
                 total += 9;
-                stringAsList.remove(stringAsList.get(i+1));
-                stringAsList.remove(stringAsList.get(i-1));
-            } else if(currentChar == 'X' && nextChar == 'L') {
+                stringAsList.remove(stringAsList.get(i + 1));
+                stringAsList.remove(stringAsList.get(i - 1));
+            } else if (currentChar == 'X' && nextChar == 'L') {
                 total += 40;
-                stringAsList.remove(stringAsList.get(i+1));
-                stringAsList.remove(stringAsList.get(i-1));
-            } else if(currentChar == 'X' && nextChar == 'C') {
+                stringAsList.remove(stringAsList.get(i + 1));
+                stringAsList.remove(stringAsList.get(i - 1));
+            } else if (currentChar == 'X' && nextChar == 'C') {
                 total += 90;
-                stringAsList.remove(stringAsList.get(i+1));
-                stringAsList.remove(stringAsList.get(i-1));
-            } else if(currentChar == 'C' && nextChar == 'D') {
+                stringAsList.remove(stringAsList.get(i + 1));
+                stringAsList.remove(stringAsList.get(i - 1));
+            } else if (currentChar == 'C' && nextChar == 'D') {
                 total += 400;
-                stringAsList.remove(stringAsList.get(i+1));
-                stringAsList.remove(stringAsList.get(i-1));
-            } else if(currentChar == 'C' && nextChar == 'M') {
+                stringAsList.remove(stringAsList.get(i + 1));
+                stringAsList.remove(stringAsList.get(i - 1));
+            } else if (currentChar == 'C' && nextChar == 'M') {
                 total += 900;
-                stringAsList.remove(stringAsList.get(i+1));
-                stringAsList.remove(stringAsList.get(i-1));
+                stringAsList.remove(stringAsList.get(i + 1));
+                stringAsList.remove(stringAsList.get(i - 1));
             } else {
-                switch(currentChar) {
-                    case 'I' : total += 1;
+                switch (currentChar) {
+                    case 'I':
+                        total += 1;
                         break;
-                    case 'V' : total += 5;
+                    case 'V':
+                        total += 5;
                         break;
-                    case 'X' : total += 10;
+                    case 'X':
+                        total += 10;
                         break;
-                    case 'L' : total += 50;
+                    case 'L':
+                        total += 50;
                         break;
-                    case 'C' : total += 100;
+                    case 'C':
+                        total += 100;
                         break;
-                    case 'D' : total += 500;
+                    case 'D':
+                        total += 500;
                         break;
-                    case 'M' : total += 1000;
+                    case 'M':
+                        total += 1000;
                         break;
-                    default : break;
+                    default:
+                        break;
                 }
             }
             System.out.println(total);
